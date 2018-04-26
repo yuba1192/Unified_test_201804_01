@@ -1,0 +1,8 @@
+[settings]
+consumer_key=
+consumer_secret=
+accsss_token=
+access_token_secret=
+
+[name]
+twit_search_name=JustinBieber

@@ -1,0 +1,5 @@
+﻿〇インストールおよび実行手順書
+①pip install requests_oauthlib
+②pip install configparser
+③oath_key_dict.txtにTwitter情報を記述する
+④python unifiedTest201804_1.py　で実行
