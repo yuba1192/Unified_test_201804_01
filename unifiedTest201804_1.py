@@ -46,9 +46,11 @@ def fav_tweets_get():
 # I画像を保存します
 def image_saver(tweets):
     global image_number
+    global max_id
     for tweet in tweets['statuses']:
         try:
-            max_id = str(tweet['id'] - 1)
+            if  max_id == '' or int(max_id) >= tweet['id']:
+                max_id = str(tweet['id'] - 1)
             image_list = tweet["extended_entities"]["media"]
             for image_dict in image_list:
                 if (len(check_url) == 10):
