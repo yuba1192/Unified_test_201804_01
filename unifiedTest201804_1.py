@@ -39,8 +39,7 @@ def fav_tweets_get():
 
     if response.status_code != 200:
         print("Error code : {0}".format(response.status_code))
-        exit(200)
-        return None
+        exit()
     tweets = json.loads(response.text)
     return tweets
 
@@ -73,7 +72,6 @@ if __name__ == "__main__":
     i = 0
     while (True):
         i += 1
-        print(i)
         tweets = fav_tweets_get()
         image_saver(tweets)
         if (len(check_url) == 10):
