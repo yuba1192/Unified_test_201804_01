@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
     i = 0
     while (True):
-        i += 1i
+        i += 1
         tweets = fav_tweets_get()
         image_saver(tweets)
         if (len(check_url) == 10):
