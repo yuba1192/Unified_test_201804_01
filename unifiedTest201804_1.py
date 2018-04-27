@@ -10,7 +10,7 @@ import configparser
 save_path = os.path.abspath('./')
 
 image_number = 0
-count = 100
+count = 90
 max_id = ''
 check_url = []
 twit_search_name = ''
