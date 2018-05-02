@@ -1,4 +1,4 @@
-# -*- coding:utf-8 -*-
+　# -*- coding:utf-8 -*-
 
 from requests_oauthlib import OAuth1Session
 import json
@@ -27,7 +27,7 @@ def fav_tweets_get():
     inifile.read('./oath_key_dict.txt', 'UTF-8')
     twit_search_name = inifile.get('name', 'twit_search_name')
     params = {
-        'q': twit_search_name,
+        'q': twit_search_name + ' exclude:retweets',
         "count" : count,
         'max_id':max_id
     }
@@ -43,7 +43,7 @@ def fav_tweets_get():
     tweets = json.loads(response.text)
     return tweets
 
-# I画像を保存します
+# 画像を保存します
 def image_saver(tweets):
     global image_number
     global max_id
@@ -65,9 +65,12 @@ def image_saver(tweets):
                     check_url.append(url)
                     image_number += 1
         except KeyError:
+            # 画像でない場合は次のツイットへ
             continue
         except:
+            # 想定外のエラーなので終了
             print("Unexpected error:", sys.exc_info()[0])
+            exit()
 
 if __name__ == "__main__":
     while (True):
